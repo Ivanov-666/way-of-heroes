@@ -1,5 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Hero} from '../hero';
+import {HeroService} from '../hero-service/hero.service';
+
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { NonNullAssert } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-hero-info',
@@ -7,5 +13,26 @@ import {Hero} from '../hero';
   styleUrls: ['./hero-info.component.scss']
 })
 export class HeroInfoComponent {
-  @Input() hero: Hero;
+  hero: Hero| null;
+
+  constructor(private heroService: HeroService, 
+    private route: ActivatedRoute,
+    private location: Location) {}
+
+  ngOnInit() {
+    this.getHero();
+  }
+
+  getHero(): void{
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.heroService.getHero(id)
+    .subscribe(hero => this.hero = hero);
+  }
+
+  goBack(): void{
+    this.location.back();
+  }
+  save(): void{
+    this.heroService.saveHero(this.hero).subscribe(() => this.goBack());
+  }
 }
