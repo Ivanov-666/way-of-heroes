@@ -6,7 +6,7 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
  
-import { Hero } from '../hero';
+import { Bike } from '../Bike';
 import { HeroService } from '../hero-service/hero.service';
  
 @Component({
@@ -15,7 +15,7 @@ import { HeroService } from '../hero-service/hero.service';
   styleUrls: [ './hero-search.component.scss' ]
 })
 export class HeroSearchComponent implements OnInit {
-  heroes$: Observable<Hero[]>;
+  heroes$: Observable<Bike[]>;
   private searchTerms = new Subject<string>();
  
   constructor(private heroService: HeroService) {}

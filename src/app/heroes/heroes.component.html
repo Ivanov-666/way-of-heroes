@@ -1,9 +1,9 @@
-<h2>My Heroes</h2>
+<h2>My Bikes</h2>
 <div>
-    <label>Hero name:
-      <input #heroName />
+    <label>Bike name:
+      <input #bikeName />
     </label>
-    <button (click)="add(heroName.value); heroName.value=''">
+    <button (click)="add(bikeName.value); bikeName.value=''">
       add
     </button>
   </div>
@@ -12,7 +12,7 @@
         <a routerLink="/detail/{{hero.id}}">
             <span class="badge">{{hero.id}}</span> {{hero.name}}
         </a>
-        <button class="delete" title="delete hero"
+        <button class="delete" title="delete bike"
             (click)="delete(hero)">x</button>   
     </li>
 </ul>

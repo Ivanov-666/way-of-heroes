@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Hero} from '../hero';
+import {Bike} from '../Bike';
 import {HeroService} from '../hero-service/hero.service';
 
 import { ActivatedRoute } from '@angular/router';
@@ -13,7 +13,7 @@ import { NonNullAssert } from '@angular/compiler';
   styleUrls: ['./hero-info.component.scss']
 })
 export class HeroInfoComponent {
-  hero: Hero| null;
+  hero: Bike| null;
 
   constructor(private heroService: HeroService, 
     private route: ActivatedRoute,

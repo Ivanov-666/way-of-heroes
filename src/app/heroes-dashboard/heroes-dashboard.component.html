@@ -1,8 +1,22 @@
-<h3>Top Heroes</h3>
-<a *ngFor="let hero of heroes" class="col-1-4"
-    routerLink="/detail/{{hero.id}}">
-  <div class="module hero">
-    <h4>{{hero.name}}</h4>
+<div class="title_search">
+  <h1 class="title">Top Bikes</h1>
+  <div class="search">
+    <app-hero-search  ></app-hero-search>
   </div>
-</a>
-<app-hero-search></app-hero-search>
+</div>
+<div class="top-bikes">
+  <div class="top-bikes_bike-card" *ngFor="let bike of bikes">
+    <a routerLink="/detail/{{bike.id}}">
+      <div class="bike-card_body">
+        <div class="bike-card_img">
+          <img class="bike-img" [src]=bike.img alt="bike">
+        </div>
+        <div class="bike-card_info">
+          <h4>{{bike.name}}</h4>
+          <p>{{bike.cost | currency:"RUB":"symbol-narrow":"2.0" }}</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+

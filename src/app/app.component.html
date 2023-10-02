@@ -1,7 +1,11 @@
-<h1>{{title}}</h1>
+<app-messages></app-messages>
+<div class="upbar">
+    <div class="upbar_home-link">
+    <img height="64" width="64" src="../assets/track-bicycle_3180449.png" alt="bicycle"/>
+    <a class="upbar_link" routerLink="/dashboard">{{title}}</a></div>
 <nav>
-    <a routerLink="/heroes">Heroes</a>
+    <a routerLink="/bikes">Heroes</a>
     <a routerLink="/dashboard">Dashboard</a>
 </nav>
+</div>
 <router-outlet></router-outlet>
-<app-messages></app-messages>
