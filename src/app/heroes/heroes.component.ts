@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Hero} from '../hero';
+import {Bike} from '../Bike';
 import { HeroService } from '../hero-service/hero.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { HeroService } from '../hero-service/hero.service';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+  heroes: Bike[];
 
   constructor(private heroService: HeroService) { }
 
@@ -24,11 +24,11 @@ export class HeroesComponent implements OnInit {
   add(name: string): void{
     name = name.trim();
     if (!name) { return; }
-    this.heroService.addHero({name} as Hero).subscribe(hero => {
+    this.heroService.addHero({name} as Bike).subscribe(hero => {
       this.heroes.push(hero)});
   }
 
-  delete(hero: Hero): void{
+  delete(hero: Bike): void{
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero).subscribe();
   }

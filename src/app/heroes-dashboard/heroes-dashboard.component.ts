@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Hero } from '../hero';
+import { Bike } from '../Bike';
 import { HeroService } from '../hero-service/hero.service';
 
 @Component({
@@ -8,13 +8,13 @@ import { HeroService } from '../hero-service/hero.service';
   styleUrls: ['./heroes-dashboard.component.scss']
 })
 export class HeroesDashboardComponent {
-  heroes: Hero[] = []
+  bikes: Bike[] = [];
 
   constructor(private heroService: HeroService){}
 
   getHeroes(): void {
     this.heroService.getHeroes()
-        .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+        .subscribe(bikes => this.bikes = bikes.sort((a,b)=>a.rate>b.rate ?  -1 : 1).slice(1, 5));
   }
 
   ngOnInit(){
