@@ -1,0 +1,28 @@
+<div *ngIf="bike">
+    <div class="bike-info_head">
+      <h1>{{bike.name | uppercase}} Details</h1>
+      <div class="buttons_container">
+        <button (click)="goBack()">go back</button>
+        <button (click)="edit()">edit bike</button>
+      </div>
+    </div>
+    <div class="bike-body">
+      <img class="bike-img" [src]=bike.img alt="bike"></div>
+    <div class="bike-info">
+      <div class="bike-info_col">
+          <div>id:</div>
+          <div>rate:</div>
+          <div>cost:</div>
+          <div>weight:</div>
+      </div>
+      <div class="bike-info_col">
+        <div>{{bike.id}}</div>
+        <div>{{bike.rate}}</div>
+        <div>{{bike.cost}}</div>
+        <div>{{bike.weight}}</div>
+      </div>
+    </div> 
+    <app-modal-window *ngIf="modalService.isVisible$| async">
+      <app-modal-bike-info [bike]="this.bike"></app-modal-bike-info>
+    </app-modal-window>   
+</div>

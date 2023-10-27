@@ -1,0 +1,19 @@
+<div class="content-container">
+<div class="bikes-list_head">
+  <h2>My Bikes</h2>
+    <button class="add-button" (click)= "add();">
+      add new bike
+    </button>
+</div>
+<ul class="bikes">
+    <li *ngFor="let bike of bikes"  @listAnim>
+        <a routerLink="/detail/{{bike.id}}">
+            <span class="badge">{{bike.id}}</span> {{bike.name}}
+        </a>
+        <button class="delete" title="delete bike"
+            (click)="delete(bike)">x</button>   
+    </li>
+</ul></div>
+<app-modal-window *ngIf="modalService.isVisible$| async">
+  <app-modal-bike-list></app-modal-bike-list>
+</app-modal-window>

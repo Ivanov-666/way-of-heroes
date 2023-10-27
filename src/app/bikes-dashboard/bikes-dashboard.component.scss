@@ -25,8 +25,13 @@ h4 {
 }
 .search{
   display: inline;
-  align-content: center;
-  justify-self: flex-start;
+  align-self: center;
+  color: #212529;
+  margin-right: 10px;
+  background-clip: padding-box;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .title_search{
   display: flex;
@@ -34,14 +39,14 @@ h4 {
   justify-content: center;
 }
 .top-bikes_bike-card {
-  margin: 20px 10px;
-  flex: 0 1 30%;
+  margin: 10px 20px;
+  flex: 1 1 30%;
   padding: 10px;
   text-align: center;
   color: #eee;
   background-color: white;
   border-radius: 10px;
-  box-shadow:  0 5px 15px 0 #00000026;
+  box-shadow:  0 5px 15px 0 #00000026; 
 }
 .bike-card_body{
   display:flex;

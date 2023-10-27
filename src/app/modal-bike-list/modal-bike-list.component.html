@@ -1,0 +1,24 @@
+<form [formGroup]="createBikeForm" novalidate>
+    <div>
+      <label>Name</label>
+      <input type="text" formControlName="name"  />
+    </div>
+  
+    <div>
+      <label>Rate</label>
+      <input type="number" formControlName="rate" />
+    </div>
+    <div>
+        <label>Image url</label>
+        <input type="text" formControlName="img" />
+    </div>
+    <div>
+        <label>Cost</label>
+        <input type="number" formControlName="cost" />
+    </div>
+    <div>
+        <label>Weight</label>
+        <input type="number" formControlName="weight" />
+    </div>
+  </form>
+  <button (click)="submit()">Submit</button>

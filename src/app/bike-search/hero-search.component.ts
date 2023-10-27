@@ -7,30 +7,30 @@ import {
  } from 'rxjs/operators';
  
 import { Bike } from '../Bike';
-import { HeroService } from '../hero-service/hero.service';
+import { BikeService } from '../bike-service/bike.service';
  
 @Component({
-  selector: 'app-hero-search',
+  selector: 'app-bike-search',
   templateUrl: './hero-search.component.html',
   styleUrls: [ './hero-search.component.scss' ]
 })
-export class HeroSearchComponent implements OnInit {
-  heroes$: Observable<Bike[]>;
+export class BikeSearchComponent implements OnInit {
+  bikes$: Observable<Bike[]>;
   private searchTerms = new Subject<string>();
  
-  constructor(private heroService: HeroService) {}
+  constructor(private bikeService: BikeService) {}
 
   search(term: string): void {
     this.searchTerms.next(term);
   }
  
   ngOnInit(): void {
-    this.heroes$ = this.searchTerms.pipe(
+    this.bikes$ = this.searchTerms.pipe(
       debounceTime(300),
 
       distinctUntilChanged(),
 
-      switchMap((term: string) => this.heroService.searchHeroes(term)),
+      switchMap((term: string) => this.bikeService.searchBikes(term)),
     );
   }
 }

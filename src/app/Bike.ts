@@ -4,4 +4,5 @@ export class Bike{
     rate: number;
     img: string;
     cost: number;
+    weight: number;
 }

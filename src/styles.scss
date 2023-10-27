@@ -1,4 +1,5 @@
-* {
+* { 
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
     padding: 0;
     margin: 0;
     border: 0; }
@@ -8,16 +9,16 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
   
-  :focus, :active {
+:focus, :active {
     outline: none; }
   
-  a:focus, a:active {
+a:focus, a:active {
     outline: none; }
   
-  nav, footer, header, aside {
+nav, footer, header, aside {
     display: block; }
   
-  html, body {
+html, body {
     height: 100%;
     width: 100%;
     font-size: 100%;
@@ -27,20 +28,21 @@
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%; }
   
-  input::-ms-clear {
+input::-ms-clear {
     display: none; }
   
-  button {
+button {
     cursor: pointer; }
   
-  button::-moz-focus-inner {
+button::-moz-focus-inner {
     padding: 0;
     border: 0; }
   
-  a, a:visited {
-    text-decoration: none; }
+a, a:visited {
+    text-decoration: none;
+    color: #535455 }
   
-  a:hover {
+a:hover {
     text-decoration: none; }
 
 body{

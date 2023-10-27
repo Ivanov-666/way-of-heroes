@@ -3,25 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { FormsModule } from '@angular/forms';
-import { HeroInfoComponent } from './hero-info/hero-info.component';
+import { BikesComponent } from './bikes/bikes.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BikeInfoComponent } from './bike-info/bike-info.component';
 import { MessagesComponent } from './message-component/messages.component';
-import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.component';
+import { BikesDashboardComponent } from './bikes-dashboard/bikes-dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data-service/in-memory-data.service';
 import { HttpClientModule } from '@angular/common/http';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { BikeSearchComponent } from './bike-search/hero-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalWindowComponent } from './modal-window/modal-window.component';
+import { ModalBikeListComponent } from './modal-bike-list/modal-bike-list.component';
+import { ModalBikeInfoComponent } from './modal-bike-info/modal-bike-info.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroInfoComponent,
+    BikesComponent,
+    BikeInfoComponent,
     MessagesComponent,
-    HeroesDashboardComponent,
-    HeroSearchComponent,
+    BikesDashboardComponent,
+    BikeSearchComponent,
+    ModalWindowComponent,
+    ModalBikeListComponent,
+    ModalBikeInfoComponent,
     
   ],
   imports: [
@@ -32,7 +39,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

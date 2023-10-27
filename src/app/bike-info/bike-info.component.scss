@@ -1,0 +1,65 @@
+/* HeroDetailComponent's private CSS styles */
+.bike-info_head{
+  display:flex;
+  justify-content: space-between;
+}
+.buttons_container{
+  margin-right: 10px;
+}
+label {
+    display: inline-block;
+    width: 3em;
+    margin: .5em 0;
+    color: #607D8B;
+    font-weight: bold;
+  }
+  h1{
+    margin: 15px 10px;
+  }
+  .bike-info{
+    display:flex;
+    font-size: 18px;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+ .bike-info_col div{
+    padding: 10px;
+ }
+
+  .bike-body{
+    display:flex;
+    margin: 10px;
+    box-shadow:  0 5px 15px 0 #15151526; 
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+    justify-content: center;
+  }
+  .bike-img{
+    border-radius: 20px;
+    width: 90%;
+    }
+  input {
+    height: 2em;
+    font-size: 1em;
+    padding-left: .4em;
+  }
+  button {
+    margin-top: 20px;
+    font-family: Arial;
+    background-color: #eee;
+    border: #535455 2px solid;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    cursor: hand;
+  }
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #ccc;
+    cursor: auto;
+  }

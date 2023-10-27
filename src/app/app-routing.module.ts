@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeroesComponent } from './heroes/heroes.component';
-import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.component';
-import { HeroInfoComponent } from './hero-info/hero-info.component';
+import { BikesComponent } from './bikes/bikes.component';
+import { BikesDashboardComponent } from './bikes-dashboard/bikes-dashboard.component';
+import { BikeInfoComponent } from './bike-info/bike-info.component';
 
 const routes: Routes = [
-  { path: 'bikes', component: HeroesComponent },
-  { path: 'dashboard', component: HeroesDashboardComponent },
-  { path: 'detail/:id', component: HeroInfoComponent},
+  { path: 'bikes', component: BikesComponent },
+  { path: 'dashboard', component: BikesDashboardComponent },
+  { path: 'detail/:id', component: BikeInfoComponent},
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
 ];
 

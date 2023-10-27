@@ -1,0 +1,35 @@
+.background{
+    background-color: black;
+    opacity: 0.6;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;  
+}
+.modal{ 
+    display: flex;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    align-items: center;
+    justify-content: center;
+    opacity: 1.0;
+    z-index: 2;
+}
+.modal-content{
+    background-color: white;
+    width: 500px;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+}
+button{
+    background-color: white;
+    position: absolute;
+    right: 25px;
+    top: 10px;
+}
+
