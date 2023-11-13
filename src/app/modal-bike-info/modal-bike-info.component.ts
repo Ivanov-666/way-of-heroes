@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder} from '@angular/forms';
 import { Bike } from '../Bike';
 import { BikeService } from '../bike-service/bike.service';
@@ -7,7 +7,8 @@ import { ModalService } from '../modal-service/modal.service';
 @Component({
   selector: 'app-modal-bike-info',
   templateUrl: './modal-bike-info.component.html',
-  styleUrls: ['./modal-bike-info.component.scss']
+  styleUrls: ['./modal-bike-info.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalBikeInfoComponent implements OnInit{
   @Input() bike: Bike;

@@ -1,4 +1,4 @@
-<div *ngIf="bike">
+<div *ngIf="(bike$|async) as bike">
     <div class="bike-info_head">
       <h1>{{bike.name | uppercase}} Details</h1>
       <div class="buttons_container">

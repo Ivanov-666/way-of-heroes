@@ -6,7 +6,7 @@
     </button>
 </div>
 <ul class="bikes">
-    <li *ngFor="let bike of bikes"  @listAnim>
+    <li *ngFor="let bike of bikes$|async"  @listAnim>
         <a routerLink="/detail/{{bike.id}}">
             <span class="badge">{{bike.id}}</span> {{bike.name}}
         </a>

@@ -38,7 +38,7 @@ export class BikeService {
     );
   }
 
-  getBike(id: number ): Observable<Bike | null> {
+  getBike(id: number ): Observable<Bike> {
     return this.http.get<Bike>(this.bikesUrl+`/${id}`).pipe(
       tap(_ => this.log(`fetched bike id=${id}`)),
       catchError(this.handleError<Bike>(`getBike id=${id}`))

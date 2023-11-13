@@ -1,18 +1,20 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {Bike} from '../Bike';
 import {BikeService} from '../bike-service/bike.service';
 import { ModalService } from '../modal-service/modal.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { Observable } from 'rxjs';
 
 
 @Component({
   selector: 'app-bike-info',
   templateUrl: './bike-info.component.html',
-  styleUrls: ['./bike-info.component.scss']
+  styleUrls: ['./bike-info.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BikeInfoComponent {
-  bike: Bike | null;
+  bike$: Observable<Bike>;
 
   constructor(private bikeService: BikeService, 
     private route: ActivatedRoute,
@@ -26,8 +28,7 @@ export class BikeInfoComponent {
 
   getBike(): void{
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.bikeService.getBike(id)
-    .subscribe(bike => this.bike = bike);
+    this.bike$ = this.bikeService.getBike(id);
   }
 
   goBack(): void{

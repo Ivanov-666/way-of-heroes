@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Bike } from '../Bike';
 import { BikeService } from '../bike-service/bike.service';
 import {
@@ -8,11 +8,13 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-heroes-dashboard',
   templateUrl: './bikes-dashboard.component.html',
   styleUrls: ['./bikes-dashboard.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('cardAnim', [
       transition('void => *', [
@@ -23,13 +25,12 @@ import {
 ],
 })
 export class BikesDashboardComponent implements OnInit{
-  bikes: Bike[] = [];
+  bikes$: Observable<Bike[]>;
 
   constructor(private heroService: BikeService){}
 
   getBikes(): void {
-    this.heroService.getBikes()
-        .subscribe(bikes => this.bikes = bikes.sort((a,b)=>a.rate>b.rate ?  -1 : 1).slice(0, 5));
+    this.bikes$ = this.heroService.getBikes();
   }
 
   ngOnInit(){

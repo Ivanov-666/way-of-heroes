@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
  
 import { Observable, Subject } from 'rxjs';
  
@@ -12,7 +12,8 @@ import { BikeService } from '../bike-service/bike.service';
 @Component({
   selector: 'app-bike-search',
   templateUrl: './hero-search.component.html',
-  styleUrls: [ './hero-search.component.scss' ]
+  styleUrls: [ './hero-search.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BikeSearchComponent implements OnInit {
   bikes$: Observable<Bike[]>;

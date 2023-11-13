@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import {Bike} from '../Bike';
 import { BikeService } from '../bike-service/bike.service';
 import { ModalService } from '../modal-service/modal.service';
@@ -9,11 +9,13 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-bikes',
   templateUrl: './bikes.component.html',
   styleUrls: ['./bikes.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('listAnim', [
       transition('void => *', [
@@ -24,14 +26,13 @@ import {
 ],
 })
 export class BikesComponent implements OnInit {
-  bikes: Bike[];
+  bikes$: Observable<Bike[]>;
 
   constructor(private bikeService: BikeService, 
     public modalService: ModalService) { }
 
   getBikes(): void {
-    this.bikeService.getBikes()
-        .subscribe(bikes => this.bikes = bikes);
+    this.bikes$ = this.bikeService.getBikes();
   }
 
   ngOnInit() {
@@ -43,8 +44,8 @@ export class BikesComponent implements OnInit {
   }
 
   delete(bike: Bike): void{
-    this.bikes = this.bikes.filter(h => h !== bike);
     this.bikeService.deleteBike(bike).subscribe();
+    this.getBikes();
   }
 
 }

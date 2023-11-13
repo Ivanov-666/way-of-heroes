@@ -5,7 +5,7 @@
   </div>
 </div>
 <div class="top-bikes">
-  <div @cardAnim class="top-bikes_bike-card" *ngFor="let bike of bikes">
+  <div @cardAnim class="top-bikes_bike-card" *ngFor="let bike of bikes$| async">
     <a routerLink="/detail/{{bike.id}}">
       <div class="bike-card_body">
         <div class="bike-card_img">
