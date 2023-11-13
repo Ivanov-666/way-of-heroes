@@ -1,5 +1,6 @@
 a {
   text-decoration: none;
+  display: block;
 }
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -10,7 +11,10 @@ h1 {
   text-align: center;
   margin: 15px;
 }
-h4 {
+p{
+  font-size: 18px;
+}
+h3 {
   margin: 5px;}
 .top-bikes{
   display: flex;
@@ -51,6 +55,7 @@ h4 {
 .bike-card_body{
   display:flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .bike-card_img{
   flex: 0;
