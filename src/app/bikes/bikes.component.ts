@@ -1,7 +1,9 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import {Bike} from '../Bike';
+import {filter} from 'rxjs/operators';
 import { BikeService } from '../bike-service/bike.service';
 import { ModalService } from '../modal-service/modal.service';
+import { FilterService } from '../filter-service/filter-service.service';
 import {
   trigger,
   state,
@@ -29,10 +31,14 @@ export class BikesComponent implements OnInit {
   bikes$: Observable<Bike[]>;
 
   constructor(private bikeService: BikeService, 
-    public modalService: ModalService) { }
+    public modalService: ModalService, public filterService: FilterService) { }
 
   getBikes(): void {
     this.bikes$ = this.bikeService.getBikes();
+  }
+
+  filterBikes(): void {
+    //this.bikes$ = this.bikes$.pipe(filter(bike => bike.cost === 1000));
   }
 
   ngOnInit() {
@@ -47,5 +53,8 @@ export class BikesComponent implements OnInit {
     this.bikeService.deleteBike(bike).subscribe();
     this.getBikes();
   }
-
+  
+  openFilter(): void{
+    this.filterService.open();
+  }
 }

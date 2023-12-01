@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalWindowComponent } from './modal-window/modal-window.component';
 import { ModalBikeListComponent } from './modal-bike-list/modal-bike-list.component';
 import { ModalBikeInfoComponent } from './modal-bike-info/modal-bike-info.component';
+import { FilterBikeListComponent } from './filter-bike-list/filter-bike-list.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ModalBikeInfoComponent } from './modal-bike-info/modal-bike-info.compon
     ModalWindowComponent,
     ModalBikeListComponent,
     ModalBikeInfoComponent,
+    FilterBikeListComponent,
     
   ],
   imports: [

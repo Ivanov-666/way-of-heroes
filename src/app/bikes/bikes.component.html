@@ -1,9 +1,14 @@
 <div class="content-container">
 <div class="bikes-list_head">
   <h1>My Bikes</h1>
-    <button class="add-button" (click)= "add();">
-      add new bike
-    </button>
+    <div>
+      <button class="button" (click)= "openFilter();">
+        filter
+      </button>
+      <button class="button" (click)= "add();">
+        add new bike
+      </button>
+    </div>
 </div>
 <ul class="bikes">
     <li *ngFor="let bike of bikes$|async"  @listAnim>
@@ -14,6 +19,9 @@
             (click)="delete(bike)">x</button>   
     </li>
 </ul></div>
-<app-modal-window *ngIf="modalService.isVisible$| async">
+<app-modal-window [windowService]='modalService' *ngIf="modalService.isVisible$| async">
   <app-modal-bike-list></app-modal-bike-list>
+</app-modal-window>
+<app-modal-window [windowService]='filterService' *ngIf="filterService.isVisible$| async">
+  <app-filter-bike-list></app-filter-bike-list>
 </app-modal-window>

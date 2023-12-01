@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { ModalService } from '../modal-service/modal.service';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import {IWindowService} from '../IWindowService';
 
 @Component({
   selector: 'app-modal-window',
@@ -8,5 +8,5 @@ import { ModalService } from '../modal-service/modal.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalWindowComponent{
-  constructor(public modalService: ModalService){}
+  @Input() windowService: IWindowService; 
 }

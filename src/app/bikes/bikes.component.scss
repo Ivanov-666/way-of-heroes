@@ -1,7 +1,7 @@
 /* HeroesComponent's private CSS styles */
 .content-container{
   max-width: 70%;
-  margin: auto;
+  margin: 15px auto;
 }
 
 .bikes-list_head{
@@ -9,12 +9,13 @@
   justify-content: space-between;
   margin: 5px 10px 0px 10px; 
 }
-.add-button{
+.button{
   align-self: center;
   font-size: 18px;
   border: #535455 2px solid;
   border-radius: 5px;
   padding: 2px 5px;
+  margin-left: 10px;
 }
 .bikes {
   margin: 0 0 2em 0;

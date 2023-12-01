@@ -5,4 +5,5 @@ export class Bike{
     img: string;
     cost: number;
     weight: number;
+    isSport: boolean;
 }

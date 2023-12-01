@@ -1,0 +1,15 @@
+<form [formGroup]="createBikeForm" novalidate>
+    <div>
+        <label>Cost</label>
+        <input type="number" formControlName="cost" />
+    </div>
+    <div>
+        <label>Weight</label>
+        <input type="number" formControlName="weight" />
+    </div>
+    <div class="checkbox">
+      <label>isSport</label>
+      <input type="checkbox" formControlName="isSport" />
+  </div>
+  </form>
+  <button (click)="submit()">Submit</button>
